@@ -21,7 +21,7 @@ It's a repo that I really would love to do, I really want to get better in data 
 
 
 
-<h2 id="Linked-List">Linked List</h2>
+<h1 id="Linked-List">Linked List</h1>
 
 <p>I think that Linked List is one of the most simple and at the same time a complex data structure that we need to know of to deal with it.</p>
 
@@ -29,7 +29,7 @@ It's a repo that I really would love to do, I really want to get better in data 
 
 <p>Basically it's what a Linked List has as operations but on each type of Linked List the operations are performed in different way than others and cause of it I'll go through and try to get the better that I can in this road, let's go on.</p>
 
-<h3 id="Simply-Linked-List">Simply Linked List</h3>
+<h2 id="Simply-Linked-List">Simply Linked List</h2>
 
 <p>The Simply Linked List is basically what I have described before but for implement it we can have 2 approaches, 1º have a array that will work like a Linked List where you only can do the List operations and we do not allow other operations by putting our array as private variable don't allowing to get direct access on it.</p>
 
@@ -37,7 +37,7 @@ It's a repo that I really would love to do, I really want to get better in data 
 
 <p>One more think that I didn't comment before, do you remember how we add a item on the list, I pretty sure that you remember, but the thing that I didn't talk about was, if the list or the array is full of items what we do if we want to add one more item, the most common approach is to create a new array bigger than the array that we have normally is the double of the past array, and after this copy all the items from the original array to the new array and after this add the new Item</p>
 
-<h4>Implementations details</p>
+<h3>Implementations details</h3>
 <ul>
    <li>We gonna have a class named SimplyLinkedList</li>
    <li>Inside of this class we going to have a array to simulate our SimplyLinkedList</li>
@@ -46,6 +46,7 @@ It's a repo that I really would love to do, I really want to get better in data 
    <ul>
       <li><strong>add(item)</strong> -> Add new item at the end of the list.</li>
       <li><strong>add(index, item)</strong> -> Add new item at specific index.</li>
+      <li><strong>isEmpty()</strong> -> Return true if it's empty and false if it's not.</li>
       <li><strong>remove()</strong> -> Remove the first item.</li>
       <li><strong>remove(index)</strong> -> Remove a specific item by his index.</li>
       <li><strong>size()</strong> -> Return the size of the list.</li>
@@ -53,33 +54,85 @@ It's a repo that I really would love to do, I really want to get better in data 
    </ul>
 </ul>
 
-<h4>Implementations</h4>
+<h3>Implementations</h3>
 
-```python
-class SimplyLinkedList:
-   def __init__(self, size):
-      self.__array = [0 for i in range(size)]
-      self.index_of_next_insert = 0
-      self.real_size_of_array = size
+```js
+class SinglyLinkedList {
+   constructor(size) {
+      let array = new Array(size);
+      let arraySize = size;
+      let indexOfNextInsert = 0;
+   }
 
-   def size(self):
-      return self.index_of_next_insert
+   add(item) {
+      if (this.indexOfNextInsert < this.arraySize) {
+         this.array[this.indexOfNextInsert] = item;
+         
+      } else {
+         auxArray = new Array(self.arraySize * 2);
 
-   def add(self, item):
-      if self.index_of_next_insert < self.real_size_of_array:
-         self.__array[self.index_of_next_insert] = item
-      else:
-         aux_array = [0 for i in range(self.real_size_of_array * 2)]
+         for (let i = 0; i < self.arraySize; i++) {
+            auxArray[i] = this.array[i];
+         }
+         this.array[this.indexOfNextInsert] = item;
+      }
+      this.indexOfNextInsert++;
+   }
 
-         for i in range(self.real_size_of_array):
-            aux_array[i] = self.__array[i]
-   
-         self.__array[self.index_of_next_insert] = item
-         self.real_size_of_array = self.real_size_of_array * 2
+   add(index, item) {
+      if (index < this.arraySize) {
+         for (let i = this.indexOfNextInsert; i > index; i--) {
+            this.array[i] = this.array[i - 1];
+         }
+         this.array[index] = item;
+         this.indexOfNextInsert++;
+      } else {
+         this.add(item);
+      }
+   }
 
-      self.index_of_next_insert += 1
+   isEmpty() {
+      return this.indexOfNextInsert == 0;
+   }
 
-   def add(self, index, item):
-      if index <= self.size():
+   remove() {
+      let aux = null;
 
+      if (! this.isEmpty()) {
+         aux = this.array[0];
+
+         for (let i = 0; i < this.indexOfNextInsert; i++) {
+            this.array[i] = this.array[i + 1];
+         }
+         this.indexOfNextInsert--;
+      }
+      return aux;
+   }
+
+   remove(index) {
+      let aux = null;
+
+      if (index < this.indexOfNextInsert) {
+         aux = this.array[index];
+
+         for (let i = index; i < this.indexOfNextInsert; i++) {
+            this.array[index] = this.array[index + 1];
+         }
+      }
+      return aux;
+   }
+
+   size() {
+      return this.indexOfNextInsert;
+   }
+
+   search(item) {
+      for (let i = 0; i < this.indexOfNextInsert; i++) {
+         if (this.array[i] == item) {
+            return true;
+         }
+      }
+      return false;
+   }
+}
 ```
