@@ -12,13 +12,14 @@ It's a repo that I really would love to do, I really want to get better in data 
 # Content table
 
 1. Linked List {#Linked-List}
-   1. Simply Linked List {#Simply-Linked-List}
+   1. Singly Linked List {#Singly-Linked-List}
    2. Doubly Linked List {#Doubly-Linked-List}
-   3. Simply Circular Linked List {#Simply-Circular-Linked-List}
+   3. Singly Circular Linked List {#Singly-Circular-Linked-List}
    4. Doubly Circular Linked List {#Doubly-Circular-Linked-List}
 2. Stack
 
 
+***
 
 
 <h1 id="Linked-List">Linked List</h1>
@@ -29,9 +30,9 @@ It's a repo that I really would love to do, I really want to get better in data 
 
 <p>Basically it's what a Linked List has as operations but on each type of Linked List the operations are performed in different way than others and cause of it I'll go through and try to get the better that I can in this road, let's go on.</p>
 
-<h2 id="Simply-Linked-List">Simply Linked List</h2>
+<h2 id="Singly-Linked-List">Singly Linked List</h2>
 
-<p>The Simply Linked List is basically what I have described before but for implement it we can have 2 approaches, 1º have a array that will work like a Linked List where you only can do the List operations and we do not allow other operations by putting our array as private variable don't allowing to get direct access on it.</p>
+<p>The Singly Linked List is basically what I have described before but for implement it we can have 2 approaches, 1º have a array that will work like a Linked List where you only can do the List operations and we do not allow other operations by putting our array as private variable don't allowing to get direct access on it.</p>
 
 <p>When we want to insert a stuff on our Linked List we just put it on the back(the last position avaible on the array) and when we want to remove a item on it we basically need to know that if we don't specify a specific position of the item that we want to remove we basically remove the first one and if we specify we remove that position, but notice that when we are removing a stuff from our list we need to return(give back or give a feedback) to the user of what item we removed.</p>
 
@@ -39,8 +40,8 @@ It's a repo that I really would love to do, I really want to get better in data 
 
 <h3>Implementations details</h3>
 <ul>
-   <li>We gonna have a class named SimplyLinkedList</li>
-   <li>Inside of this class we going to have a array to simulate our SimplyLinkedList</li>
+   <li>We gonna have a class named SinglyLinkedList</li>
+   <li>Inside of this class we going to have a array to simulate our SinglyLinkedList</li>
    <li>We will also have a controller to notice what the position that we will add the new item.</li>
    <li>Some Methods:</li>
    <ul>
@@ -54,85 +55,34 @@ It's a repo that I really would love to do, I really want to get better in data 
    </ul>
 </ul>
 
-<h3>Implementations</h3>
+<h3>Linked Implementation</h3>
 
-```js
-class SinglyLinkedList {
-   constructor(size) {
-      let array = new Array(size);
-      let arraySize = size;
-      let indexOfNextInsert = 0;
-   }
+<p>In Linked Implementation we don't use array instead of it we use nodes.</p>
+<p>But what does mean node? What is it?</p>
+<p>A node in my own words is a individual element that has a information stored in and also have connections with other nodes if needed.</p>
+<p>Usually in this approach we have a class named Node that inside of it we going to have normally 2 attributes, one is the actual data and other is the pointer to the next node(after the actual node).</p>
 
-   add(item) {
-      if (this.indexOfNextInsert < this.arraySize) {
-         this.array[this.indexOfNextInsert] = item;
-         
-      } else {
-         auxArray = new Array(self.arraySize * 2);
+<p>One more thing, usually when we implement a Singly linked list like we gonna do, we have at the structure a node that refers to the head of the List. </p>
 
-         for (let i = 0; i < self.arraySize; i++) {
-            auxArray[i] = this.array[i];
-         }
-         this.array[this.indexOfNextInsert] = item;
-      }
-      this.indexOfNextInsert++;
-   }
+<h4>Why do we need a head node at the List?</h4>
+<p>You could ask this and in my own words I say "If do you wanna visit things that are connected you have a start point and in Singly Linked List this start point" and the head is the start point because from the head we can go to the next node and from the next node we can go to another.</p>
 
-   add(index, item) {
-      if (index < this.arraySize) {
-         for (let i = this.indexOfNextInsert; i > index; i--) {
-            this.array[i] = this.array[i - 1];
-         }
-         this.array[index] = item;
-         this.indexOfNextInsert++;
-      } else {
-         this.add(item);
-      }
-   }
+<h4>What do we earn if we implement the Singly Linked List at this way?</h4>
+<p>We earn a better memory use, because in this case we just need to have a individual space to each node instead of the array implementation because at that implementation when the List is full we duplied the size of the array only to add a item and it's not good in terms of memorym and we also win at other aspects from Singly Linked List.</p>
 
-   isEmpty() {
-      return this.indexOfNextInsert == 0;
-   }
 
-   remove() {
-      let aux = null;
-
-      if (! this.isEmpty()) {
-         aux = this.array[0];
-
-         for (let i = 0; i < this.indexOfNextInsert; i++) {
-            this.array[i] = this.array[i + 1];
-         }
-         this.indexOfNextInsert--;
-      }
-      return aux;
-   }
-
-   remove(index) {
-      let aux = null;
-
-      if (index < this.indexOfNextInsert) {
-         aux = this.array[index];
-
-         for (let i = index; i < this.indexOfNextInsert; i++) {
-            this.array[index] = this.array[index + 1];
-         }
-      }
-      return aux;
-   }
-
-   size() {
-      return this.indexOfNextInsert;
-   }
-
-   search(item) {
-      for (let i = 0; i < this.indexOfNextInsert; i++) {
-         if (this.array[i] == item) {
-            return true;
-         }
-      }
-      return false;
-   }
-}
-```
+<h3>Implementations details</h3>
+<ul>
+   <li>We gonna have a class named SinglyLinkedList</li>
+   <li>Inside of this class we going to have a node named head</li>
+   <li>Some Methods:</li>
+   <ul>
+      <li><strong>add(item)</strong> -> Add new item at the end of the list.</li>
+      <li><strong>add(index, item)</strong> -> Add new item at specific index.</li>
+      <li><strong>isEmpty()</strong> -> Return true if it's empty and false if it's not.</li>
+      <li><strong>remove()</strong> -> Remove the first item.</li>
+      <li><strong>remove(index)</strong> -> Remove a specific item by his index.</li>
+      <li><strong>size()</strong> -> Return the size of the list.</li>
+      <li><strong>search(item)</strong> -> Search if the item is on the list.</li>
+   </ul>
+</ul>
