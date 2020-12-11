@@ -1,26 +1,46 @@
 # Learning Data Structure And Algorithm
-
-|Languages|Avability|
-|---------|---------|
-|[English]() | Beta |
-|[Português]() | Beta |
-
 ***
 
 It's a repo that I really would love to do, I really want to get better in data structure and algorithm because I think that's a really good skill to have in my skill set as future software engineer.
 
 # Content table
 
-1. Linked List {#Linked-List}
-   1. Singly Linked List {#Singly-Linked-List}
-   2. Doubly Linked List {#Doubly-Linked-List}
-   3. Singly Circular Linked List {#Singly-Circular-Linked-List}
-   4. Doubly Circular Linked List {#Doubly-Circular-Linked-List}
-2. Stack
+1. Stack
+1. Linked List
+   1. Singly Linked List 
+   2. Doubly Linked List
+   3. Singly Circular Linked List
+   4. Doubly Circular Linked List
 
 
 ***
 
+<h1 id="Stack">Stack</h1>
+
+<p>What is a stack for you?</p>
+<p>In my opinion a stack is kind of thing that we stack up things, like I can have a stack of laptops, a stack of books, a stack of papers, a stack of clothes, and so on.</p>
+
+<p>And basically it's a stack it's not a very different thing that we never seen before, the unique difference here is that we are going to use it in computer.</p>
+
+<h2>How implement a Stack?</h2>
+
+<p>Basically we have 2 approaches that I know, the first one is using an array and the second one is using a linked structure.</p>
+
+<h3>Array Approach</h3>
+
+<p>In the array approach the main thing is to have an array and a pointer(variable to identify the next index that we going to insert the value), and here we going to have a Stack with a specific size, not a dynamic one.</p>
+
+<h4>Insert in the Stack</h4>
+
+<p>Verify if it's not full, and if it's not we just insert the item in the next avaible position, if it's full we don't do anything.</p>
+
+<h4>Remove Item from Stack</h4>
+
+<p>We remove a item if the Stack is not empty, and we remove always the item in the top of the stack.</p>
+
+<h4>See the Item on the Top of the Stack</h4>
+
+<p>
 
 <h1 id="Linked-List">Linked List</h1>
 
