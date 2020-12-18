@@ -5,12 +5,12 @@ It's a repo that I really would love to do, I really want to get better in data 
 
 # Content table
 
-1. Stack
-1. Linked List
-   1. Singly Linked List 
-   2. Doubly Linked List
-   3. Singly Circular Linked List
-   4. Doubly Circular Linked List
+1. [Stack](STACK.md)
+1. [Linked List](LinkedList.md)
+   1. [Singly Linked List]() 
+   2. [Doubly Linked List]()
+   3. [Singly Circular Linked List]()
+   4. [Doubly Circular Linked List]()
 
 
 
