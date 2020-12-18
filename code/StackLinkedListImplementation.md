@@ -1,3 +1,4 @@
+```js
 class Node {
     constructor(item) {
         this.data = item;
@@ -31,6 +32,7 @@ class Stack {
             this.totalSize--;
             return aux;
         }
+        return null;
     }
 
     peek() {
@@ -47,49 +49,4 @@ class Stack {
         return this.stackTop == null;
     }
 }
-
-
-function recursiveRemove(stack) {
-    if (stack.size() != 0) {
-        let aux = stack.pop();
-        recursiveRemove(stack);
-        console.log(aux);
-    }
-}
-
-let stack = new Stack();
-
-
-console.log(stack.isEmpty())
-stack.push(5);
-stack.push(3);
-stack.pop();
-stack.push(2);
-stack.push(8);
-stack.pop();
-stack.pop();
-stack.push(9);
-stack.push(1);
-stack.pop()
-stack.push(7);
-stack.push(6);
-stack.pop()
-stack.pop()
-stack.push(4);
-stack.pop()
-stack.pop()
-
-console.log(stack.isEmpty())
-
-while(stack.size() > 0) {
-    console.log(stack.pop());
-}
-
-console.log(stack.isEmpty())
-console.log("Recursive Remove");
-
-stack.push(1);
-stack.push(2);
-stack.push(3);
-stack.push(4);
-recursiveRemove(stack);
+```
