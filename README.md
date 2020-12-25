@@ -17,11 +17,11 @@ It's a repo that I really would love to do, I really want to get better in data 
 
 ## Todo List
 
-- [ ] Write About Stacks
-  - [ ] Write about Stacks in Array Implementation
-  - [ ] Write about Stacks in Linked Implementation
+- [x] Write About Stacks
+  - [x] Write about Stacks in Array Implementation
+  - [x] Write about Stacks in Linked Implementation
 - [ ] Write about Linked List
-  - [ ] Write about Singly Linked List
+  - [x] Write about Singly Linked List(Arrat and Linked Implementation)
   - [ ] Write about Doubly Linked List
   - [ ] Write about Singly Circular Linked List
   - [ ] Write about Doubly Circular Linked List

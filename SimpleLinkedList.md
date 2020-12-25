@@ -6,7 +6,7 @@ class Node {
    }
 }
 
-class SinglyLinkedList1 {
+class SinglyLinkedList {
    constructor() {
       this.head = null;
       this.size = 0;
@@ -260,7 +260,7 @@ function searchElement(element, list) {
 }
 
 
-let list = new SinglyLinkedList1();
+let list = new SinglyLinkedList();
 
 list.add(5);
 list.add(4);
