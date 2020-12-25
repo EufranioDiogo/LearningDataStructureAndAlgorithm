@@ -22,6 +22,6 @@ It's a repo that I really would love to do, I really want to get better in data 
   - [x] Write about Stacks in Linked Implementation
 - [ ] Write about Linked List
   - [x] Write about Singly Linked List(Arrat and Linked Implementation)
-  - [ ] Write about Doubly Linked List
+  - [x] Write about Doubly Linked List
   - [ ] Write about Singly Circular Linked List
   - [ ] Write about Doubly Circular Linked List

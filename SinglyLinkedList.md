@@ -1,28 +1,14 @@
 
 <h1 id="Singly-Linked-List">Singly Linked List</h1>
 
-<p>The Singly Linked List is basically what I have described before but for implement it we can have 2 approaches, 1º have a array that will work like a Linked List where you only can do the List operations and we do not allow other operations by putting our array as private variable don't allowing to get direct access on it.</p>
+<p>The Singly Linked List is basically what I have described before [here](LinkedList.md), we can have to approaches, the first one could be implementating with an array and the onether is using the Linked approach where we will have a node structure that will allow us to store a ref of the others nodes in the linked list approach..</p>
 
 <p>When we want to insert a stuff on our Linked List we just put it on the back(the last position avaible on the array) and when we want to remove a item on it we basically need to know that if we don't specify a specific position of the item that we want to remove we basically remove the first one and if we specify we remove that position, but notice that when we are removing a stuff from our list we need to return(give back or give a feedback) to the user of what item we removed.</p>
 
 <p>One more think that I didn't comment before, do you remember how we add a item on the list, I pretty sure that you remember, but the thing that I didn't talk about was, if the list or the array is full of items what we do if we want to add one more item, the most common approach is to create a new array bigger than the array that we have normally is the double of the past array, and after this copy all the items from the original array to the new array and after this add the new Item</p>
 
-<h3>Implementations details</h3>
-<ul>
-   <li>We gonna have a class named SinglyLinkedList</li>
-   <li>Inside of this class we going to have a array to simulate our SinglyLinkedList</li>
-   <li>We will also have a controller to notice what the position that we will add the new item.</li>
-   <li>Some Methods:</li>
-   <ul>
-      <li><strong>add(item)</strong> -> Add new item at the end of the list.</li>
-      <li><strong>add(index, item)</strong> -> Add new item at specific index.</li>
-      <li><strong>isEmpty()</strong> -> Return true if it's empty and false if it's not.</li>
-      <li><strong>remove()</strong> -> Remove the first item.</li>
-      <li><strong>remove(index)</strong> -> Remove a specific item by his index.</li>
-      <li><strong>size()</strong> -> Return the size of the list.</li>
-      <li><strong>search(item)</strong> -> Search if the item is on the list.</li>
-   </ul>
-</ul>
+<h2>Linked Operations</h2>
+We could have lots of operations at this data structure 
 
 <h3>Linked Implementation</h3>
 
@@ -40,18 +26,11 @@
 <p>We earn a better memory use, because in this case we just need to have a individual space to each node instead of the array implementation because at that implementation when the List is full we duplied the size of the array only to add a item and it's not good in terms of memorym and we also win at other aspects from Singly Linked List.</p>
 
 
-<h3>Implementations details</h3>
-<ul>
-   <li>We gonna have a class named SinglyLinkedList</li>
-   <li>Inside of this class we going to have a node named head</li>
-   <li>Some Methods:</li>
-   <ul>
-      <li><strong>add(item)</strong> -> Add new item at the end of the list.</li>
-      <li><strong>add(index, item)</strong> -> Add new item at specific index.</li>
-      <li><strong>isEmpty()</strong> -> Return true if it's empty and false if it's not.</li>
-      <li><strong>remove()</strong> -> Remove the first item.</li>
-      <li><strong>remove(index)</strong> -> Remove a specific item by his index.</li>
-      <li><strong>size()</strong> -> Return the size of the list.</li>
-      <li><strong>search(item)</strong> -> Search if the item is on the list.</li>
-   </ul>
-</ul>
+<h3>Array Implementation</h3>
+
+Implementing in this way we are going to have the same methods but we a different approach than the Linked Implementation.
+
+
+You can see the actual code in the links below:
+[Array Implementation](SinglyLinkedListArrayImplementation.md)
+[Linked Implemetation](SinglyLinkedListLinkedImplementation.md)
