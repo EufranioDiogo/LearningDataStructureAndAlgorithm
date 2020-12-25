@@ -6,7 +6,7 @@ It's a repo that I really would love to do, I really want to get better in data 
 # Content table
 
 1. [Stack](STACK.md)
-1. [Linked List](LinkedList.md)
+2. [Linked List](LinkedList.md)
    1. [Singly Linked List]() 
    2. [Doubly Linked List]()
    3. [Singly Circular Linked List]()
@@ -15,4 +15,13 @@ It's a repo that I really would love to do, I really want to get better in data 
 
 
 
+## Todo List
 
+- [ ] Write About Stacks
+  - [ ] Write about Stacks in Array Implementation
+  - [ ] Write about Stacks in Linked Implementation
+- [ ] Write about Linked List
+  - [ ] Write about Singly Linked List
+  - [ ] Write about Doubly Linked List
+  - [ ] Write about Singly Circular Linked List
+  - [ ] Write about Doubly Circular Linked List
